@@ -2,7 +2,7 @@
   "name": "kigtui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kdiaz489.github.io/react-gh-pages",
+  "homepage": "https://kdiaz489.github.io/kigtui",
   "dependencies": {
     "chart.js": "^2.7.2",
     "react": "^16.4.1",
