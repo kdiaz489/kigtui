@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css';
+import './Sidenav.css';
 import Logo from '../images/logo.png';
 import ProfilePic from '../images/woman.jpg';
 

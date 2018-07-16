@@ -1,36 +1,34 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+.logo{
+  padding-top: 10%;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
 }
 
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
+.profilePic{
+
+  width:100%;
+  margin-top: 10%;
+
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  width:110px;
+  height:110px;
+  border: 2px lightgray solid;
+  border-radius: 50%;
+  
+
 }
 
 
-
-/*--------------------*/
-/* PAGE CONTENT STYLE */
-/*--------------------*/
-
-
-#content {
-    width: 100%;
-    padding: 20px;
-    min-height: 100vh;
-    transition: all 0.3s;
-}
-
-.wrapper{
-  display: flex;
-  align-items: stretch;
+.profileName{
+  margin-top: 15%;
+  text-align: center;
 }
 
 /*----------------*/
@@ -189,5 +187,4 @@ ul ul a {
         -ms-transform: translateX(50%);
         transform: translateX(50%);
     }
-
-}
+  }
