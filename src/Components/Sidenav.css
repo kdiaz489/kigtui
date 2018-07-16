@@ -7,6 +7,11 @@
 
 }
 
+.sidebarHeader{
+
+  padding:20px;
+}
+
 .profilePic{
 
   width:100%;
@@ -146,6 +151,14 @@ ul ul a {
       text-align: center;
 
     }
+
+    .sidebarHeader{
+
+      padding:0;
+      padding-top: 20px;
+
+    }
+
 
     .circularImg{
 

@@ -1,6 +1,7 @@
 .chart{
-	margin-bottom: 7%;
+	margin: 7% 0 7% 0;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 	position: relative;
 	height: auto;
 	width:100%;
@@ -12,4 +13,12 @@
 
 
 
+@media (max-width:768px){
 
+.chart{
+	border-radius: 1%;
+
+
+}
+
+}

@@ -11,7 +11,9 @@ class Sidenav extends Component{
 		return(
 		<div className="wrapper">
 			<nav className="sidebar">
-				<img src={Logo} className="logo" />
+				<div className="sidebarHeader">
+					<img src={Logo} className="logo" />
+				</div>
 
 				
 					<div className="circularImg">
