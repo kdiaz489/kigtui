@@ -44,6 +44,9 @@ class Sidenav extends Component{
 		                </ul>
 		            </li>
 		            <li>
+		            	<a href="#">Utilities</a>
+		            </li>
+		            <li>
 		                <a href="#">V2G</a>
 		            </li>
 		            
