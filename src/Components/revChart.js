@@ -23,10 +23,10 @@ class revChart extends Component{
 
 					],
 					backgroundColor:[
-						'rgba(169,169,169,0.8)',
-						'rgba(169,169,169,0.8)',
-						'rgba(169,169,169,0.8)',
-						'rgba(169,169,169,0.8)'
+						'rgba(77, 182, 92,0.8)',
+						'rgba(77, 182, 92,0.8)',
+						'rgba(77, 182, 92,0.8)',
+						'rgba(77, 182, 92,0.8)'
 
 
 
@@ -40,7 +40,7 @@ class revChart extends Component{
 
 	render(){
 
-		
+
 		return(
 			<div>
 
@@ -49,12 +49,12 @@ class revChart extends Component{
 
 					<Bar
 					data ={this.state.chartData}
-					
+
 					options={{
 						legend:{
 							display: false
 						},
-						
+
 						maintainAspectRation: false
 					}}
 					/>

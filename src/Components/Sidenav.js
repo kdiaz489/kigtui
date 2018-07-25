@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import './Sidenav.css';
-import Logo from '../images/logo.png';
+import Logo from '../images/logotrans.png';
 import ProfilePic from '../images/woman.jpg';
 
 
@@ -15,13 +15,13 @@ class Sidenav extends Component{
 					<img src={Logo} className="logo" />
 				</div>
 
-				
+
 					<div className="circularImg">
 						<img src={ProfilePic} className="profilePic" />
 					</div>
 
 				<h6 className="profileName">Lisa Innis</h6>
-				
+
 
 				<ul className="list-unstyled components">
 					<li>
@@ -51,7 +51,7 @@ class Sidenav extends Component{
 		            <li>
 		                <a href="#">V2G</a>
 		            </li>
-		            
+
 
 				</ul>
 

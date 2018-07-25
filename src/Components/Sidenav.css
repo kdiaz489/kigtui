@@ -21,12 +21,12 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
+
   width:110px;
   height:110px;
   border: 2px lightgray solid;
   border-radius: 50%;
-  
+
 
 }
 
@@ -45,8 +45,8 @@
     /* don't forget to add all the previously mentioned styles here too */
     min-width:250px;
     max-width:250px;
-    min-height: 100vh;    
-    background: #333333;
+    min-height: 100vh;
+    background: #0e1111;
     color: #fafafa;
     transition: all 0.3s;
 }
@@ -92,7 +92,7 @@ a, a:hover, a:focus {
 
 .sidebar ul.components {
     padding: 20px 0;
-    
+
     /*
     border-bottom: 1px solid #fafafa;
     */
@@ -112,14 +112,14 @@ a, a:hover, a:focus {
 .sidebar ul li a:hover {
     color: #333333;;
     background: white;
-    
+
 }
 
 /*SUB MENU ACTIVE AND EXPANDED */
 .sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #333333;;
     background: white;
-    
+
 }
 
 .sidebar.active .dropdowntoggle::after{
@@ -189,8 +189,8 @@ ul ul a {
         padding: 10px !important;
     }
 
-    /* Changing the arrow position to bottom center position, 
-      translateX(50%) works with right: 50% 
+    /* Changing the arrow position to bottom center position,
+      translateX(50%) works with right: 50%
       to accurately  center the arrow */
     .dropdown-toggle::after {
         top: auto;
