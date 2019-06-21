@@ -7,6 +7,7 @@ class revChart extends Component{
 
 	constructor(props){
 		super(props);
+		console.log("prop value = " +this.props.value);
 		this.state={
 			chartData:{
 				labels: ['Sample A', 'Sample B', 'Sample C', 'Sample D'],
@@ -14,12 +15,12 @@ class revChart extends Component{
 
 				{
 
-					label:'Data',
+					label:'Power Usage',
 					data:[
-						6123,
-						4562,
-						6543,
-						9876
+						this.props.value,
+						this.props.value+5,
+						10,
+						11
 
 					],
 					backgroundColor:[
@@ -36,6 +37,7 @@ class revChart extends Component{
 				]
 			}
 		}
+
 	}
 
 	render(){
@@ -44,7 +46,7 @@ class revChart extends Component{
 		return(
 			<div>
 
-				<h4 className="chartTitle">{this.props.title + ' ______'}</h4>
+				<h4 className="chartTitle">{this.props.title + ' ' + this.props.value}</h4>
 				<div className="chart">
 
 					<Bar
@@ -53,6 +55,14 @@ class revChart extends Component{
 					options={{
 						legend:{
 							display: false
+						},
+
+						scales: {
+								yAxes: [{
+										ticks: {
+												beginAtZero: true
+										}
+								}]
 						},
 
 						maintainAspectRation: false

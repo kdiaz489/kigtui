@@ -12,20 +12,20 @@ class Sidenav extends Component{
 		<div className="wrapper">
 			<nav className="sidebar">
 				<div className="sidebarHeader">
-					<img src={Logo} className="logo" />
+					<img src={Logo} className="logo" alt=" " />
 				</div>
 
 
 					<div className="circularImg">
-						<img src={ProfilePic} className="profilePic" />
+						<img src={ProfilePic} className="profilePic" alt=" " />
 					</div>
 
-				<h6 className="profileName">Lisa Innis</h6>
+				<h6 className="profileName">Name</h6>
 
 
 				<ul className="list-unstyled components">
 					<li>
-		                <a href="#homeSubmenu">Dashboard</a>
+		                <a href="https://youtube.com">Dashboard</a>
 
 		            </li>
 		            <li>
