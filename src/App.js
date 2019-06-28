@@ -7,11 +7,12 @@ import {Config} from './Config.js';
 import './Variables.js'
 
 class App extends Component {
+
   constructor(props){
     super(props);
     this.app = firebase.initializeApp(Config);
     this.database = this.app.database().ref();
-    this.chargeStation = {};
+    
   }
 
   componentWillMount(){
@@ -38,7 +39,7 @@ class App extends Component {
       //return start;
     }
 
-    /* DISREGARD, THIS CALLS ON A SNAPSHOT OF THE ENTIRE DATABASE, NOT JUST ONE CHILD
+    /* DISREGARD!! THIS CALLS ON A SNAPSHOT OF THE ENTIRE DATABASE, NOT JUST ONE CHILD
     this.database.on('value', snap =>{
 
       //takes snapshot of entire database
@@ -62,21 +63,23 @@ class App extends Component {
     */
 
     this.database.orderByKey().equalTo('123456789').on('value', function(snapshot){
-      console.log(snapshot.val());
+
+      //console.log(snapshot.val());
       var s1 = snapshot.val();
       var key1 = Object.keys(snapshot.val());
       var obj1 = s1[key1]
-      console.log(obj1);
+      //console.log(obj1);
       global.chargeStation = obj1;
       global.state = global.chargeStation['EVSE State'];
-      console.log(global.state + 'state is here');
+      console.log(global.state + ' = EVSE State ');
 
 
 
       //These are the variables we will be using to product the Y axis
       /// Y axis is KW used per hour for that charge
 
-      console.log(global.chargeStation['EVSE State'] + ' TEST HERE!!');
+      console.log(global.chargeStation['EVSE State'] + ' EVSE State TEST HERE!!');
+
       var current = parseInt(global.chargeStation['EVSE Current Level'], 10);
       //console.log('current = ' + current);
 
@@ -94,6 +97,16 @@ class App extends Component {
       costprice = power * cost;
 
 
+      if(current < 30){
+        global.throttle = true;
+      }
+      else if(current == 30){
+        global.throttle = false;
+      }
+      else{
+        console.log( 'valid current level not recorded');
+      }
+
       // If state changes to 3, then create start time stamp
       if(global.state === 3){
 
@@ -103,6 +116,31 @@ class App extends Component {
         console.log('This state is 3 ');
         //PUSH TIME STAMP TO FIREBASE
         snapshot.ref.update({"SERVER Time Start EVSE": startTime});
+
+        // if throttle is enabled during charge
+        if (global.throttle){
+
+          //time stamp 2 for throttle begins
+          var throttleStart = new Date();
+          var throttleUTCStart = throttleStart.getTime();
+
+
+        }
+
+        //if throttle is disabled during charge
+        else if (global.throttle == false){
+
+          //time stamp 2 for throttle ending
+
+          var throttleEnd = new Date();
+          var throttleUTCEnd = throttleEnd.getTime();
+
+          //total throttle time
+          var totalTime = timeDiff(throttleUTCStart, throttleUTCEnd);
+
+        }
+
+
         //this.database.child('123456789/SERVER Time Start EVSE').set(startTime);
       }
 
@@ -125,8 +163,11 @@ class App extends Component {
 
       // If state changes to 1, then creates pause time stamp condition
       else if (global.state === 1) {
+
         // Creates regular time stamp
         ts1 = new Date();
+
+        //creates UTC time so we can subtract
         pauseTime  = ts1.getTime();
 
         //PUSH TIME STAMP TO FIREBASE
@@ -139,8 +180,14 @@ class App extends Component {
 
       // Any other state this message prints out
       else{
-        console.log('This state is different');
+        console.log('This state is not valid!');
       }
+
+
+      //Throttling code starts here
+
+
+
 
     });
 

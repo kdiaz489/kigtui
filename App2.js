@@ -18,7 +18,7 @@ class App extends Component {
       evseState: [],
       evseCost: [],
       evsePower: []
-    }
+    };
   }
 
   diff_minutes(start, end){
